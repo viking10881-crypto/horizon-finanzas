@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil — Horizon 360</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/finanzas.css') }}">
+</head>
+
+<body class="auth-body">
+
+  <div class="auth-card">
+
+    <div class="auth-brand">H360</div>
+
+    <h1>Mi perfil</h1>
+    <p>Actualiza tu información y foto de usuario.</p>
+
+    <div class="profile-preview">
+      {% if current_user.foto %}
+        <img src="{{ url_for('static', filename='uploads/' + current_user.foto) }}">
+      {% else %}
+        <span>{{ current_user.nombre[:1]|upper }}</span>
+      {% endif %}
+    </div>
+
+    <form method="POST" action="{{ url_for('perfil') }}" enctype="multipart/form-data" class="auth-form">
+
+      <label>Nombre</label>
+      <input type="text" name="nombre" value="{{ current_user.nombre }}" required>
+
+      <label>Correo</label>
+      <input type="email" value="{{ current_user.email }}" disabled>
+
+      <label>Foto de perfil</label>
+      <input type="file" name="foto" accept="image/*">
+
+      <button type="submit">Guardar perfil</button>
+    </form>
+
+    <a href="{{ url_for('dashboard') }}" class="auth-link">
+      Volver al dashboard
+    </a>
+
+  </div>
+
+</body>
+</html>

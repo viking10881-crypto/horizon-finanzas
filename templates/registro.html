@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro — Horizon 360</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/finanzas.css') }}">
+</head>
+<body class="auth-body">
+
+  <div class="auth-card">
+    <div class="auth-brand">H360</div>
+
+    <h1>Crear cuenta</h1>
+    <p>Empieza a controlar tus finanzas personales.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="auth-alert {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('registro') }}" class="auth-form">
+      <label>Nombre</label>
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+
+      <label>Correo</label>
+      <input type="email" name="email" placeholder="tu@email.com" required>
+
+      <label>Contraseña</label>
+      <input type="password" name="password" placeholder="••••••••" required>
+
+      <button type="submit">Crear cuenta</button>
+    </form>
+
+    <a href="{{ url_for('login') }}" class="auth-link">
+      Ya tengo cuenta
+    </a>
+  </div>
+
+</body>
+</html>

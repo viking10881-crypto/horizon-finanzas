@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Movimientos{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>Movimientos</h1>
+  <p>Todos los registros financieros.</p>
+</div>
+
+<div class="transactions-table">
+
+  <div class="transactions-header">
+    <span>Nombre</span>
+    <span>Tipo</span>
+    <span>Categoría</span>
+    <span>Fecha</span>
+    <span>Monto</span>
+    <span></span>
+  </div>
+
+  {% for m in movimientos %}
+  <div class="transaction-row">
+
+    <span class="t-name">{{ m.nombre }}</span>
+
+    <span class="t-type {{ m.tipo }}">
+      {{ m.tipo }}
+    </span>
+
+    <span class="t-category">{{ m.categoria }}</span>
+
+    <span class="t-date">
+      {{ m.fecha.strftime('%d/%m') }}
+    </span>
+
+    <span class="t-amount {% if m.tipo == 'ingreso' %}ingreso{% elif m.tipo == 'deuda' %}deuda{% else %}gasto{% endif %}">
+      ${{ "{:,.0f}".format(m.monto) }}
+    </span>
+
+  </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}

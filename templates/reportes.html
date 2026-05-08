@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Reportes{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>Reportes financieros</h1>
+  <p>Análisis de gastos y categorías.</p>
+</div>
+
+<div class="chart-panel">
+  <div class="report-chart-wrap">
+    <canvas id="gastosChart"></canvas>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const categorias = {{ categorias|tojson }};
+  const valores = {{ valores|tojson }};
+
+  const ctx = document.getElementById("gastosChart");
+
+  if (ctx && categorias.length > 0) {
+    new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: categorias,
+        datasets: [{
+          data: valores
+        }]
+      }
+    });
+  }
+</script>
+
+{% endblock %}

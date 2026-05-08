@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Presupuestos{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Presupuestos</h1>
+  <p>Control inteligente de límites financieros.</p>
+</div>
+
+<div class="module-grid">
+  {% for p in presupuestos %}
+    <div class="module-card">
+      <h3>{{ p.categoria }}</h3>
+      <p>Límite mensual configurado</p>
+      <strong>${{ "{:,.0f}".format(p.limite) }}</strong>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
