@@ -21,3 +21,4 @@ Proyecto Flask de finanzas personales listo para desplegar en Render.
 - `Procfile`: define el comando de inicio para el servicio web.
 - `render.yaml`: configura el servicio de Render de forma declarativa.
 - `.env.example`: muestra las variables de entorno necesarias.
+# render fix
