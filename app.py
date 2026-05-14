@@ -14,7 +14,7 @@ load_dotenv()
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "horizon-dev-secret")
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", "sqlite:///horizon.db")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
@@ -524,4 +524,6 @@ def perfil():
     return render_template("perfil.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    debug = os.getenv("FLASK_DEBUG", "false").lower() == "true"
+    app.run(host="0.0.0.0", port=port, debug=debug)
