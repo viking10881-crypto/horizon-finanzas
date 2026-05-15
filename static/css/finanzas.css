@@ -867,6 +867,11 @@ a {
   .tx-date {
     font-size: 1rem;
   }
+
+  .col-2 {
+    padding: 1.2rem 1rem;
+    gap: 1.6rem;
+  }
 }
 
 .search-form {
@@ -1523,6 +1528,155 @@ select option {
 .t-delete:hover {
   transform: scale(1.12);
   background: hsla(0,70%,55%,.18);
+}
+
+/* RESPONSIVE TABLA MOVIMIENTOS */
+@media (max-width: 980px) {
+  .transactions-table {
+    padding: 1.5rem;
+  }
+
+  .transactions-header,
+  .transaction-row {
+    grid-template-columns: 1.5fr 1fr 1fr auto;
+    gap: 0.8rem;
+  }
+
+  .transactions-header {
+    font-size: 1.1rem;
+    padding: 0 0.8rem;
+  }
+
+  .transaction-row {
+    padding: 1rem 0.8rem;
+  }
+
+  .t-category {
+    display: none;
+  }
+
+  .transactions-header span:nth-child(3) {
+    display: none;
+  }
+
+  .t-name {
+    font-size: 1.3rem;
+  }
+
+  .t-date {
+    font-size: 1.1rem;
+  }
+
+  .t-amount {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .transactions-table {
+    padding: 1.2rem;
+  }
+
+  .transactions-header,
+  .transaction-row {
+    grid-template-columns: 1.2fr 0.9fr 1fr auto;
+    gap: 0.6rem;
+  }
+
+  .transactions-header {
+    font-size: 1rem;
+    padding: 0 0.6rem;
+  }
+
+  .transaction-row {
+    padding: 0.9rem 0.6rem;
+  }
+
+  .t-name {
+    font-size: 1.2rem;
+  }
+
+  .t-date {
+    font-size: 1rem;
+  }
+
+  .t-type {
+    font-size: 1rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .t-amount {
+    font-size: 1.1rem;
+  }
+
+  .t-delete {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.3rem;
+  }
+
+  .t-edit {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .transactions-table {
+    padding: 0.8rem;
+    border-radius: 10px;
+    overflow-x: auto;
+  }
+
+  .transactions-header,
+  .transaction-row {
+    grid-template-columns: 1fr 0.8fr auto;
+    gap: 0.5rem;
+    min-width: fit-content;
+  }
+
+  .transactions-header {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .transaction-row {
+    padding: 0.7rem 0.5rem;
+  }
+
+  .t-date {
+    display: none;
+  }
+
+  .transactions-header span:nth-child(4) {
+    display: none;
+  }
+
+  .t-type {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .t-name {
+    font-size: 1.1rem;
+  }
+
+  .t-amount {
+    font-size: 1rem;
+  }
+
+  .t-delete,
+  .t-edit {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.2rem;
+  }
+
+  .t-actions {
+    display: flex;
+    gap: 0.4rem;
+  }
 }
 
 /*insights-panel*/
