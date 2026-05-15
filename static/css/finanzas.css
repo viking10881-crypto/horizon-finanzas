@@ -773,6 +773,7 @@ a {
   .col-2 {
     width: 100%;
     overflow: visible;
+    padding: 2rem 1.6rem;
   }
 
   .stats-row {
@@ -781,6 +782,34 @@ a {
 
   .header__search {
     display: none;
+  }
+
+  /* RESPONSIVE MOVIMIENTOS DESKTOP */
+  .tx-item {
+    gap: 1rem;
+    padding: 1rem 0.8rem;
+  }
+
+  .tx-icon {
+    width: 3.6rem;
+    height: 3.6rem;
+    font-size: 1.5rem;
+  }
+
+  .tx-name {
+    font-size: 1.35rem;
+  }
+
+  .tx-cat {
+    font-size: 1.1rem;
+  }
+
+  .tx-amount {
+    font-size: 1.35rem;
+  }
+
+  .tx-date {
+    font-size: 1.1rem;
   }
 }
 
@@ -800,6 +829,43 @@ a {
 
   .modal-box {
     width: 100%;
+  }
+
+  /* RESPONSIVE MOVIMIENTOS */
+  .tx-item {
+    gap: 0.8rem;
+    padding: 0.8rem 0.6rem;
+    margin: 0 -0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .tx-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.4rem;
+  }
+
+  .tx-info {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .tx-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .tx-cat {
+    font-size: 1rem;
+  }
+
+  .tx-amount {
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
+
+  .tx-date {
+    font-size: 1rem;
   }
 }
 
@@ -868,6 +934,35 @@ a {
   .search-form select,
   .search-form button {
     display: none;
+  }
+
+  /* RESPONSIVE MOVIMIENTOS TABLET */
+  .tx-item {
+    gap: 0.9rem;
+    padding: 0.9rem 0.7rem;
+    margin: 0 -0.7rem;
+  }
+
+  .tx-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+  }
+
+  .tx-name {
+    font-size: 1.3rem;
+  }
+
+  .tx-cat {
+    font-size: 1.05rem;
+  }
+
+  .tx-amount {
+    font-size: 1.3rem;
+  }
+
+  .tx-date {
+    font-size: 1.05rem;
   }
 }
 
